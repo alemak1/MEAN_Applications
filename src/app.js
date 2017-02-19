@@ -7,8 +7,8 @@ var port = 3000;
 
 app.use("/",express.static('public'));
 
-app.get("/todos",function(req,res){
-	res.send('These are the todos!');
+app.get("/api/todos",function(req,res){
+	res.json({todos:[]});
 });
 
 app.listen(port,function(){
