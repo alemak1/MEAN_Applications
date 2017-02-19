@@ -2,6 +2,7 @@
 
 var express = require('express');
 var router = require('./api');
+var db = require('./database');
 
 var app = express();
 var port = 3000;
