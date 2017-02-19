@@ -20,7 +20,7 @@ angular.module('todoListApp')
     	}
     	queue.push(request);
     });
-    $q.all(queue).then(function(results){
+    return $q.all(queue).then(function(results){
     	console.log("I saved " + todos.length + " todos!");
     });
   };
