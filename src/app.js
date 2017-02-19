@@ -7,9 +7,14 @@ var port = 3000;
 
 app.use("/",express.static('public'));
 
-app.get("/api/todos",function(req,res){
+var router = express.Router();
+
+router.get("/todos",function(req,res){
 	res.json({todos:[]});
 });
+
+app.use('/api',router);
+
 
 app.listen(port,function(){
 	console.log("The server is listening on port " + port + "!");
