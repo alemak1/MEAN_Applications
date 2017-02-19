@@ -18,6 +18,16 @@ router.get("/todos",function(req,res){
 });
 
 //TODO: Add a POST route to create new entries
+router.post('/todos',function(req,res){
+	var todo = req.body;
+	Todo.create(todo, function(err,todo){
+		if(err){
+			return res.status(500).json({err: err.message});
+		}
+		res.json({'todo':todo, 'message': 'Todo Created'});
+	});
+
+});
 
 //TODO: Add a PUT route to update existing entries
 
